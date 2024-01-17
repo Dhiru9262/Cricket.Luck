@@ -1,0 +1,31 @@
+body{
+    font-style: normal;
+    color: #cbf34a;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    opacity: 1;
+    background-image: url(./chirayu-trivedi-iDTDvSDEVjw-unsplash.jpg);
+    background-position: bottom;
+    background-size: 128%;
+    
+    
+}
+
+.bdy{
+    padding: 10px;
+    border-radius: 10px;
+    background-position: left;
+    position: absolute;
+    top: 25%;
+}
+.bdy1{
+    display: flex;
+    justify-content: center;
+}
+
+   
+.butt{
+    border-radius: 25px;
+    margin: 5px;
+    padding: 10px 20px 10px 20px ;
+}
