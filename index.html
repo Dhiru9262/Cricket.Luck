@@ -20,6 +20,7 @@
     <p style="margin: 5%;">Chose one</p>
     
     <button class="butt" onclick="
+    
     console.log('you have chosen Bat');
     let randomNumb= Math.random()*3;
     let computerChoice;
@@ -40,19 +41,22 @@
     
     if(computerChoice==='Ball'){
         result ='Great! You won ';
+        FinalResult.win++;
         
     }
     if(computerChoice==='Stump'){
         result='Better luck next time ';
-      
+        FinalResult.loss++;
     }
     if(computerChoice==='Bat'){
         result='Match tie';
-        
+        FinalResult.tie++;
     }
     console.log(result);
+    console.log(FinalResult);
     alert(`Your choise is 'Bat' and computer choice is '${computerChoice}'
-     '${result}'`) 
+     '${result}'
+     won: ${FinalResult.win} , loss:${FinalResult.loss}, tie:${FinalResult.tie} `) 
     ">Bat 🏏</button>
 
     <button class="butt" onclick="
@@ -75,25 +79,29 @@
     if(computerChoice==='Ball'){
         
         result='Match tie';
+        FinalResult.tie++;
     }
     if(computerChoice==='Stump'){
         
         result ='Great! You won ';
+        FinalResult.win++;
     }
     if(computerChoice==='Bat'){
         result='Better luck next time ';
-        
+        FinalResult.loss++;
     }
     console.log(result);
+    console.log(FinalResult);
     alert(`Your choise is 'Ball' and computer choice is '${computerChoice}'
-     '${result}'`) 
+     '${result}'
+     won: ${FinalResult.win} , loss:${FinalResult.loss}, tie:${FinalResult.tie} `) 
     ">Ball 🥎</button>
 
     <button class="butt" onclick="
     console.log('you have chosen Stump');
      randomNumb= Math.random()*3;
     if(randomNumb>0 && randomNumb<=1){
-        computerChoice = 'Bat';
+        computerChoice = 'Bat'; 
          console.log('computer choice is Bat') 
     }
     else if(randomNumb>1 && randomNumb<=2){
@@ -108,21 +116,50 @@
     
     if(computerChoice==='Ball'){
         result='Better luck next time ';
+        FinalResult.loss++;
     }
     if(computerChoice==='Stump'){
         result='Match tie'; 
+        FinalResult.tie++;
     }
     if(computerChoice==='Bat'){
         result ='Great! You won ';
-       
+        FinalResult.win++;
     }
     console.log(result);
+    console.log(FinalResult);
     alert(`Your choise is 'Stump' and computer choice is '${computerChoice}'
-     '${result}'`) 
+     '${result}'
+     won: ${FinalResult.win} , loss:${FinalResult.loss}, tie:${FinalResult.tie}`) 
     ">Stump ☝🏾️</button>
 </div>
 </div>
 </div>
+<script>
+    let FinalResult ={
+        win:0,
+        loss:0,
+        tie:0,
+
+    }
+    function CompChoiceGenrator(){
+        let randomNumb= Math.random()*3;
+        let computerChoice;
+        let result;
+        if(randomNumb>0 && randomNumb<=1){
+            computerChoice = 'Bat';
+             console.log('computer choice is Bat') 
+        }
+        else if(randomNumb>1 && randomNumb<=2){
+             computerChoice = 'Ball';
+            console.log('computer choice is Ball') 
+        }
+        else if(randomNumb>2 && randomNumb<=3){
+            computerChoice = 'Stump';
+             console.log('computer choice is Stump') 
+        }
+    }
+</script>
 </body>
 
 </html>
