@@ -11,7 +11,7 @@
 <body>
     <div class="bdy1">
     <div class="bdy">
-    <h1>Bat Ball Stump Game</h1>
+    <h1>Bat Ball Stump Game</h1>  
     <p style="margin: 1%;">Rule of game:</p>
     <p style="margin: 0%;">Bat+Ball=Bat win</p>
     <p style="margin: 0%;">Bat+Stump=Stump Win</p>
@@ -19,6 +19,7 @@
     <div class="function">
     <p style="margin: 5%;">Chose one</p>
     
+
     <button class="butt" onclick="
     
     console.log('you have chosen Bat');
@@ -54,9 +55,12 @@
     }
     console.log(result);
     console.log(FinalResult);
-    alert(`Your choise is 'Bat' and computer choice is '${computerChoice}'
-     '${result}'
-     won: ${FinalResult.win} , loss:${FinalResult.loss}, tie:${FinalResult.tie} `) 
+    document.querySelector('#UserMove').innerText=`Your choise is 'Bat'`;
+    document.querySelector('#CompMove').innerText=`computer choice is '${computerChoice}`;
+    document.querySelector('#Result').innerText=`${result}`;
+    document.querySelector('#Score').innerText=` won: ${FinalResult.win} , loss:${FinalResult.loss}, tie:${FinalResult.tie}`;
+
+   
     ">Bat 🏏</button>
 
     <button class="butt" onclick="
@@ -92,10 +96,12 @@
     }
     console.log(result);
     console.log(FinalResult);
-    alert(`Your choise is 'Ball' and computer choice is '${computerChoice}'
-     '${result}'
-     won: ${FinalResult.win} , loss:${FinalResult.loss}, tie:${FinalResult.tie} `) 
-    ">Ball 🥎</button>
+    document.querySelector('#UserMove').innerText=`Your choise is 'Ball'`;
+    document.querySelector('#CompMove').innerText=`computer choice is '${computerChoice}`;
+    document.querySelector('#Result').innerText=`${result}`;
+    document.querySelector('#Score').innerText=` won: ${FinalResult.win} , loss:${FinalResult.loss}, tie:${FinalResult.tie}`;
+
+     ">Ball 🥎</button>
 
     <button class="butt" onclick="
     console.log('you have chosen Stump');
@@ -128,10 +134,19 @@
     }
     console.log(result);
     console.log(FinalResult);
-    alert(`Your choise is 'Stump' and computer choice is '${computerChoice}'
-     '${result}'
-     won: ${FinalResult.win} , loss:${FinalResult.loss}, tie:${FinalResult.tie}`) 
-    ">Stump ☝🏾️</button>
+    document.querySelector('#UserMove').innerText=`Your choise is 'Stump'`;
+    document.querySelector('#CompMove').innerText=`computer choice is '${computerChoice}`;
+    document.querySelector('#Result').innerText=`${result}`;
+    document.querySelector('#Score').innerText=` won: ${FinalResult.win} , loss:${FinalResult.loss}, tie:${FinalResult.tie}`;
+   ">Stump ☝🏾️</button>
+
+   <!-- for dom -->
+   <h3 id="UserMove"></h3>
+   <h3 id="CompMove"></h3>
+   <h3 id="Result"></h3>
+   <h3 id="Score"></h3>
+   <!-- // for dom -->
+    
 </div>
 </div>
 </div>
@@ -140,7 +155,6 @@
         win:0,
         loss:0,
         tie:0,
-
     }
     function CompChoiceGenrator(){
         let randomNumb= Math.random()*3;
